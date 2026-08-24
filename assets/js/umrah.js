@@ -297,19 +297,9 @@
     var open = e.target.closest && e.target.closest('[data-open-quote]');
     if (open) {
       e.preventDefault();
-      /* On desktop the hero form is always visible — scrolling to it
-         beats a modal. Below 1000px the form is far down the page,
-         so the modal is the faster path. */
-      var heroForm = $('#quote-form');
-      if (heroForm && window.innerWidth > 1000 && !leadId) {
-        heroForm.scrollIntoView({ block: 'center', behavior: 'smooth' });
-        var pkg = open.getAttribute('data-pkg') || '';
-        var pre = pkg.indexOf('5 star') === 0 ? '#t5' : (pkg.indexOf('4 star') === 0 ? '#t4' : null);
-        if (pre) { var r = $(pre); if (r) r.checked = true; }
-        $('#q-name').focus({ preventScroll: true });
-        track('quote_scroll', { source: open.getAttribute('data-pkg') || '' });
-        return;
-      }
+      /* Every quote button opens the popup in place — no scroll jump.
+         The reader keeps their position on the page and the form comes
+         to them, preselected with the tier they clicked. */
       openModal(open.getAttribute('data-track') || 'button', open.getAttribute('data-pkg') || '');
       return;
     }
@@ -424,20 +414,24 @@
     var section = document.getElementById('reviews');
     if (!section) return;
 
-    var live = 0;
     $$('.vid', section).forEach(function (fig) {
       var btn = $('.vid__btn', fig);
       var id  = btn && btn.getAttribute('data-video');
 
-      /* Not configured yet → hide this tile rather than ship a
-         broken play button. */
-      if (!id || id.indexOf('REPLACE') === 0) { fig.hidden = true; return; }
+      /* Not configured yet → keep the tile visible but swap the play
+         button for a "coming soon" badge, so the section reads as real
+         while the videos are being edited. */
+      if (!id || id.indexOf('REPLACE') === 0) {
+        fig.classList.add('vid--soon');
+        btn.disabled = true;
+        var badge = document.createElement('span');
+        badge.className = 'vid__soon';
+        badge.textContent = 'Customer story — coming soon';
+        btn.appendChild(badge);
+        return;
+      }
 
       var poster = $('.vid__poster', fig);
-      if (poster) {
-        poster.addEventListener('error', function () { fig.hidden = true; });
-      }
-      live++;
 
       btn.addEventListener('click', function () {
         var type = btn.getAttribute('data-video-type') || 'youtube';
@@ -467,9 +461,6 @@
       });
     });
 
-    /* All four still placeholders → keep the section hidden so the
-       page is publishable before the videos are ready. */
-    section.hidden = live === 0;
   })();
 
   /* ---- Scroll depth, so you can see where attention dies ------ */
