@@ -131,7 +131,7 @@ table{border-collapse:collapse;width:100%}
    If the image file is missing the gradients above still stand alone. */
 .hero--photo{background:
   linear-gradient(105deg, rgba(8,52,39,.94) 0%, rgba(8,52,39,.88) 42%, rgba(6,36,28,.62) 72%, rgba(6,32,25,.58) 100%),
-  url("../img/social/madinah-crescent.jpg") 72% 38%/cover no-repeat,
+  url("../img/social/madinah-crescent.webp") 72% 38%/cover no-repeat,
   linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
 /* Geometric eight-point-star lattice — a 40-byte data URI, not an image file */
 .hero::before{
@@ -307,7 +307,7 @@ table{border-collapse:collapse;width:100%}
    highest-intent, most seasonal money term in the account. */
 .ram{color:#fff;padding:72px 0;position:relative;overflow:hidden;background:
   linear-gradient(168deg, rgba(9,52,39,.93) 0%, rgba(6,36,27,.96) 100%),
-  url("../img/social/madinah-moon.jpg") center/cover no-repeat,
+  url("../img/social/madinah-moon.webp") center/cover no-repeat,
   linear-gradient(168deg,#0B4433 0%,#062A20 100%)}
 .ram::before{
   content:"";position:absolute;inset:0;opacity:.09;pointer-events:none;
@@ -404,7 +404,7 @@ table{border-collapse:collapse;width:100%}
 /* Closing CTA over the light-rays post */
 .close--photo{background:
   linear-gradient(168deg, rgba(11,64,48,.90) 0%, rgba(6,42,32,.93) 100%),
-  url("../img/social/madinah-rays.jpg") center 35%/cover no-repeat,
+  url("../img/social/madinah-rays.webp") center 35%/cover no-repeat,
   linear-gradient(168deg,#0E5A43 0%,#08402F 100%)}
 
 /* ── Footer ────────────────────────────────────────────────────── */
@@ -460,7 +460,7 @@ table{border-collapse:collapse;width:100%}
      of the image and the wash lightens to let it read. */
   .hero--photo{background:
     linear-gradient(180deg, rgba(8,52,39,.66) 0%, rgba(7,44,33,.80) 48%, rgba(6,32,25,.95) 100%),
-    url("../img/social/madinah-crescent.jpg") center 22%/cover no-repeat,
+    url("../img/social/madinah-crescent.webp") center 22%/cover no-repeat,
     linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
 
   /* Headline → form → proof points: the enquiry form sits in the first
