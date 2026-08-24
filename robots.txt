@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /leads.csv
+
+Sitemap: https://REPLACE-YOUR-DOMAIN/sitemap.xml
