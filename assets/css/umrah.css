@@ -130,8 +130,8 @@ table{border-collapse:collapse;width:100%}
 /* Photo of the Haram behind a green wash that keeps the text readable.
    If the image file is missing the gradients above still stand alone. */
 .hero--photo{background:
-  linear-gradient(105deg, rgba(8,52,39,.95) 0%, rgba(8,52,39,.90) 40%, rgba(6,36,28,.50) 66%, rgba(6,32,25,.42) 100%),
-  url("../img/social/madinah-moon.webp") 62% 26%/cover no-repeat,
+  linear-gradient(100deg, rgba(6,36,28,.90) 0%, rgba(7,44,33,.72) 42%, rgba(6,34,26,.40) 72%, rgba(6,32,25,.34) 100%),
+  url("../img/social/masjid-nabawi-wide.webp") 50% 42%/cover no-repeat,
   linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
 /* Geometric eight-point-star lattice — a 40-byte data URI, not an image file */
 .hero::before{
@@ -335,16 +335,7 @@ table{border-collapse:collapse;width:100%}
    Facade pattern: each tile is just a poster image until it is
    clicked. A real YouTube embed pulls ~700KB per video and would
    undo the load speed this page depends on. */
-.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) 1.15fr;gap:22px;align-items:stretch}
-/* Third cell: copy + CTA, so two videos fill the row instead of
-   floating in a half-empty grid. */
-.vids__cta{display:flex;flex-direction:column;justify-content:center;gap:6px;
-  background:var(--sand);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
-.vids__lead{font-family:var(--font-head);font-weight:700;font-size:1.18rem;color:var(--green-dk);margin:0 0 6px;line-height:1.3}
-.vids__sub{font-size:.92rem;color:var(--muted);margin:0 0 18px}
-.vids__ig{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;
-  font-size:.88rem;font-weight:600;text-decoration:none;color:var(--green)}
-.vids__ig .ic{width:18px;height:18px}
+.vids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
 .vid{margin:0}
 .vid__btn{
   display:block;width:100%;aspect-ratio:9/16;padding:0;border:0;cursor:pointer;position:relative;
@@ -463,14 +454,13 @@ table{border-collapse:collapse;width:100%}
   .ram__head{grid-template-columns:1fr}
   .ram__img{width:100%;max-width:280px}
   .vids{grid-template-columns:1fr 1fr}
-  .vids__cta{grid-column:1/-1;padding:22px}
   .ig__grid{grid-template-columns:1fr 1fr}
   .ig__head{align-items:flex-start}
   /* The social photos are portrait, so on phones the hero shows far more
      of the image and the wash lightens to let it read. */
   .hero--photo{background:
-    linear-gradient(180deg, rgba(8,52,39,.55) 0%, rgba(7,44,33,.74) 46%, rgba(6,32,25,.94) 100%),
-    url("../img/social/madinah-moon.webp") center 18%/cover no-repeat,
+    linear-gradient(180deg, rgba(8,52,39,.62) 0%, rgba(7,44,33,.78) 46%, rgba(6,32,25,.95) 100%),
+    url("../img/social/masjid-nabawi-wide.webp") center 38%/cover no-repeat,
     linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
 
   /* Headline → form → proof points: the enquiry form sits in the first
