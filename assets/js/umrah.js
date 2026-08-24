@@ -463,6 +463,19 @@
 
   })();
 
+
+  /* ---- Instagram wall ----------------------------------------
+     Tiles remove themselves when their image file is missing (see
+     the onerror in the markup). If none survive, the heading and
+     follow button would be left stranded — so drop the section. */
+  (function instagram() {
+    var section = document.getElementById('instagram');
+    if (!section) return;
+    window.addEventListener('load', function () {
+      if (!section.querySelectorAll('.ig__tile').length) section.hidden = true;
+    });
+  })();
+
   /* ---- Scroll depth, so you can see where attention dies ------ */
   (function depth() {
     var marks = [25, 50, 75, 100], hit = {};

@@ -130,8 +130,8 @@ table{border-collapse:collapse;width:100%}
 /* Photo of the Haram behind a green wash that keeps the text readable.
    If the image file is missing the gradients above still stand alone. */
 .hero--photo{background:
-  linear-gradient(168deg, rgba(11,64,48,.86) 0%, rgba(6,42,32,.84) 60%, rgba(6,32,25,.92) 100%),
-  url("../img/hero-makkah.jpg") center 30%/cover no-repeat,
+  linear-gradient(105deg, rgba(8,52,39,.94) 0%, rgba(8,52,39,.88) 42%, rgba(6,36,28,.62) 72%, rgba(6,32,25,.58) 100%),
+  url("../img/social/madinah-crescent.jpg") 72% 38%/cover no-repeat,
   linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
 /* Geometric eight-point-star lattice — a 40-byte data URI, not an image file */
 .hero::before{
@@ -307,7 +307,7 @@ table{border-collapse:collapse;width:100%}
    highest-intent, most seasonal money term in the account. */
 .ram{color:#fff;padding:72px 0;position:relative;overflow:hidden;background:
   linear-gradient(168deg, rgba(9,52,39,.93) 0%, rgba(6,36,27,.96) 100%),
-  url("../img/ramadan-haram.jpg") center/cover no-repeat,
+  url("../img/social/madinah-moon.jpg") center/cover no-repeat,
   linear-gradient(168deg,#0B4433 0%,#062A20 100%)}
 .ram::before{
   content:"";position:absolute;inset:0;opacity:.09;pointer-events:none;
@@ -358,19 +358,7 @@ table{border-collapse:collapse;width:100%}
   border:1px solid rgba(239,200,148,.5);border-radius:var(--radius-sm);padding:12px 10px;
   background:rgba(6,32,26,.55)}
 
-/* Social proof row under the customer stories */
-.social{margin-top:34px;padding:26px 28px;background:var(--sand);border:1px solid var(--line);
-  border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.social__big{margin:0;font-size:1.06rem;color:var(--ink)}
-.social__big b{font-family:var(--font-head);color:var(--green-dk)}
-.social__links{display:flex;gap:12px;flex-wrap:wrap}
-.social__btn{display:flex;align-items:center;gap:11px;background:var(--white);border:1.5px solid var(--line);
-  border-radius:var(--radius-sm);padding:10px 16px;text-decoration:none;color:var(--ink);transition:border-color .15s,box-shadow .15s}
-.social__btn:hover{border-color:var(--green);box-shadow:var(--shadow);color:var(--ink)}
-.social__btn .ic{width:22px;height:22px;color:var(--green)}
-.social__btn span{display:flex;flex-direction:column;line-height:1.25}
-.social__btn b{font-size:.94rem}
-.social__btn small{font-size:.78rem;color:var(--muted)}
+
 
 /* ── FAQ ───────────────────────────────────────────────────────── */
 .faq{max-width:840px;margin:0 auto}
@@ -394,6 +382,30 @@ table{border-collapse:collapse;width:100%}
 .close h2{color:#fff}
 .close p{color:rgba(255,255,255,.85);max-width:52ch;margin:0 auto 26px}
 .close__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+
+/* ── Instagram wall ────────────────────────────────────────────
+   The client's own viral posts. A 150k audience is proof no
+   testimonial can buy, so the grid is given real estate rather than
+   being reduced to a row of icons. */
+.ig__head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;margin-bottom:30px;flex-wrap:wrap}
+.ig__head > div{max-width:640px}
+.ig__head .lede{margin-bottom:0}
+.ig__follow{flex:none}
+.ig__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ig__tile{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--green-dk);
+  aspect-ratio:4/5;position:relative;box-shadow:var(--shadow)}
+.ig__tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.ig__tile:hover img{transform:scale(1.04)}
+/* An empty grid (no image files yet) collapses instead of showing four
+   dark rectangles. */
+.ig__grid:empty{display:none}
+
+/* Closing CTA over the light-rays post */
+.close--photo{background:
+  linear-gradient(168deg, rgba(11,64,48,.90) 0%, rgba(6,42,32,.93) 100%),
+  url("../img/social/madinah-rays.jpg") center 35%/cover no-repeat,
+  linear-gradient(168deg,#0E5A43 0%,#08402F 100%)}
 
 /* ── Footer ────────────────────────────────────────────────────── */
 .foot{background:#06201A;color:rgba(255,255,255,.72);padding:44px 0 30px;font-size:.9rem}
@@ -442,6 +454,15 @@ table{border-collapse:collapse;width:100%}
   .band__form .btn{grid-column:1/-1}
   .ram__grid{grid-template-columns:1fr}
   .vids{grid-template-columns:1fr 1fr}
+  .ig__grid{grid-template-columns:1fr 1fr}
+  .ig__head{align-items:flex-start}
+  /* The social photos are portrait, so on phones the hero shows far more
+     of the image and the wash lightens to let it read. */
+  .hero--photo{background:
+    linear-gradient(180deg, rgba(8,52,39,.66) 0%, rgba(7,44,33,.80) 48%, rgba(6,32,25,.95) 100%),
+    url("../img/social/madinah-crescent.jpg") center 22%/cover no-repeat,
+    linear-gradient(168deg, #0E5A43 0%, #08402F 100%)}
+
   /* Headline → form → proof points: the enquiry form sits in the first
      screen and a bit, not below every benefit bullet. */
   .hero__in{grid-template-columns:1fr;grid-template-areas:"copy" "form" "proof";gap:26px;padding:40px 0 46px}
@@ -453,8 +474,8 @@ table{border-collapse:collapse;width:100%}
   .foot__in{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
-  .social{flex-direction:column;align-items:flex-start;padding:20px}
-  .social__btn{width:100%}
+  .ig__follow{width:100%}
+  .ig__grid{gap:10px}
   /* WhatsApp already lives in the sticky bar — the pill here only
      crowds the scrolling nav. */
   .head__wa{display:none}
