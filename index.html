@@ -221,6 +221,45 @@
   </div>
 </section>
 
+<!-- ── Instagram wall ─────────────────────────────────────────
+     The four best-performing posts from @umrahinsights. This is the
+     strongest trust asset on the page: a 150k audience is proof no
+     testimonial can match, and it is the client's own photography
+     rather than stock. Files go in assets/img/social/ — see the
+     README there. A tile whose file is missing removes itself.
+     ─────────────────────────────────────────────────────────── -->
+<section class="sec sec--sand" id="instagram">
+  <div class="wrap">
+    <div class="ig__head">
+      <div>
+        <p class="sec__kicker">Instagram &middot; 150k+ followers</p>
+        <h2>The Umrah community already follows us</h2>
+        <p class="lede">Over 200,000 people across Instagram and Facebook follow Umrah Insights for
+        Makkah and Madinah content. The same team that posts it books your trip.</p>
+      </div>
+      <a class="btn btn--primary ig__follow" href="https://www.instagram.com/umrahinsights" target="_blank" rel="noopener" data-track="instagram-wall">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Follow @umrahinsights
+      </a>
+    </div>
+
+    <div class="ig__grid">
+      <figure class="ig__tile">
+        <img src="assets/img/social/ig-post-planning.webp" alt="Umrah Insights post: planning Umrah in 2026-27, the best time to go" loading="lazy" onerror="this.closest('.ig__tile').remove()">
+      </figure>
+      <figure class="ig__tile">
+        <img src="assets/img/social/madinah-moon.webp" alt="The green dome of the Prophet's Mosque under a full moon" loading="lazy" onerror="this.closest('.ig__tile').remove()">
+      </figure>
+      <figure class="ig__tile">
+        <img src="assets/img/social/madinah-rays.webp" alt="Light rays over the green dome of the Prophet's Mosque" loading="lazy" onerror="this.closest('.ig__tile').remove()">
+      </figure>
+      <figure class="ig__tile">
+        <img src="assets/img/social/madinah-crescent.webp" alt="The green dome and minaret at night with a crescent moon" loading="lazy" onerror="this.closest('.ig__tile').remove()">
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ── Trust strip ────────────────────────────────────────────── -->
 <section class="strip" aria-label="Why book with us">
   <div class="wrap strip__in">
@@ -388,6 +427,67 @@
   </div>
 </section>
 
+<!-- ── Customer video stories ─────────────────────────────────
+     Two real customer videos, served from assets/video/ and compressed
+     to 720x1280 with the moov atom up front so playback starts before
+     the file finishes downloading. Nothing loads until a click — the
+     tile is only a poster frame until then, which keeps the page fast
+     on mobile data.
+
+     To add another: copy a <figure class="vid"> block, set data-video
+     to the file path (data-video-type="file") or an 11-character
+     YouTube ID (data-video-type="youtube"), add a poster frame, and
+     write a caption naming the person and the city.
+     ─────────────────────────────────────────────────────────── -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec__head center">
+      <p class="sec__kicker">Reviews</p>
+      <h2>Pilgrims who travelled with us</h2>
+    </div>
+    <div class="vids">
+      <figure class="vid">
+        <button class="vid__btn" type="button"
+                data-video="assets/video/story-1.mp4"
+                data-video-type="file"
+                data-video-title="Customer story filmed in Madinah">
+          <img class="vid__poster" src="assets/img/social/story-1-poster.jpg" alt="Customer speaking outside the Prophet's Mosque in Madinah" loading="lazy" width="405" height="720">
+          <span class="vid__play" aria-hidden="true"></span>
+          <span class="sr">Play customer story, filmed in Madinah</span>
+        </button>
+        <figcaption>Filmed in Madinah &mdash; booked with Umrah Insights</figcaption>
+      </figure>
+
+      <figure class="vid">
+        <button class="vid__btn" type="button"
+                data-video="assets/video/story-2.mp4"
+                data-video-type="file"
+                data-video-title="Bushra's story, filmed in Makkah">
+          <img class="vid__poster" src="assets/img/social/story-2-poster.jpg" alt="Bushra speaking outside the Haram in Makkah" loading="lazy" width="405" height="720">
+          <span class="vid__play" aria-hidden="true"></span>
+          <span class="sr">Play Bushra's story, filmed in Makkah</span>
+        </button>
+        <figcaption>Bushra &mdash; Makkah, &ldquo;a splendid service&rdquo;</figcaption>
+      </figure>
+
+      <!-- Third cell turns the empty column into a capture point rather
+           than dead space. -->
+      <div class="vids__cta">
+        <p class="vids__lead">Filmed by real pilgrims, at the Haram &mdash; not actors, not stock footage.</p>
+        <p class="vids__sub">Every one of them started with the same two-minute enquiry. Send your dates and
+        we will come back with named hotels and one per-person price.</p>
+        <button class="btn btn--primary btn--block" type="button" data-open-quote data-pkg="after videos">Get my Umrah quote</button>
+        <a class="vids__ig" href="https://www.instagram.com/umrahinsights" target="_blank" rel="noopener" data-track="instagram-videos">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
+          More stories on Instagram
+        </a>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── Ramadan ────────────────────────────────────────────────
      REPLACE the three prices and the two dates before launch.
      Run this section as its own ad group — "ramadan umrah packages"
@@ -402,9 +502,6 @@
         <p class="ram__lede">Ramadan hotels near the Haram are normally gone by the previous autumn, and
         the last ten nights go first. Register your dates now &mdash; we hold rooms as they release.</p>
       </div>
-      <img class="ram__img" src="assets/img/social/madinah-crescent.webp"
-           alt="The green dome and minaret of the Prophet's Mosque at night with a crescent moon"
-           loading="lazy" width="526" height="701" onerror="this.remove()">
     </div>
 
     <div class="ram__grid">
@@ -482,7 +579,6 @@
       </div>
 
       <div class="tcard">
-        <img class="tcard__img" onerror="this.style.display='none'" src="assets/img/social/madinah-day.webp" alt="The green dome of the Prophet's Mosque in Madinah" loading="lazy" width="800" height="533">
         <div class="tcard__top">
           <h3>4 Star <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;</span></h3>
           <p>For pilgrims happy to walk a little further, or use the shuttle, and put the difference towards more nights.</p>
@@ -537,48 +633,6 @@
       </div>
       <button class="btn btn--gold" type="submit" data-track="cta-band-1">Get my quote</button>
     </form>
-  </div>
-</section>
-
-<!-- ── Included / not included ────────────────────────────────── -->
-<section class="sec sec--cream" id="included">
-  <div class="wrap">
-    <div class="sec__head">
-      <p class="sec__kicker">What&rsquo;s included</p>
-      <h2>Everything in the price &mdash; and everything that isn&rsquo;t</h2>
-      <p class="lede">Most Umrah complaints start with something nobody mentioned at the quote stage.
-      So here are both halves.</p>
-    </div>
-
-    <div class="incl">
-      <div class="incl__col">
-        <h3>Included in every package</h3>
-        <ul class="incl--yes">
-          <li>Return flights from your chosen UK airport</li>
-          <li>Umrah e-visa processing</li>
-          <li>Hotels in Makkah and Madinah, named in your quote</li>
-          <li>Daily breakfast</li>
-          <li>Airport transfers in Saudi Arabia</li>
-          <li>Makkah&ndash;Madinah intercity transfer</li>
-          <li>Ziyarat tours in both cities (most departures)</li>
-          <li>ATOL protection and your certificate</li>
-          <li>A UK adviser and 24/7 ground staff for the whole trip</li>
-        </ul>
-      </div>
-      <div class="incl__col">
-        <h3>Not included &mdash; ask us and we&rsquo;ll price it</h3>
-        <ul class="incl--no">
-          <li>Travel insurance (we strongly recommend it)</li>
-          <li>Lunch and dinner, unless you take half board</li>
-          <li>Excess baggage beyond the airline allowance</li>
-          <li>Ihram clothing and personal spending</li>
-          <li>Qurbani, gifts and Zamzam shipping</li>
-          <li>Optional private transport in Makkah</li>
-          <li>Passport renewal or biometric fees</li>
-          <li>Peak-season supplements (Ramadan, school holidays)</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -646,106 +700,6 @@
         <p>Ask which floor faces the Haram, or the nearest entrance for a wheelchair. Someone here has
         stayed there.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Customer video stories ─────────────────────────────────
-     Two real customer videos, served from assets/video/ and compressed
-     to 720x1280 with the moov atom up front so playback starts before
-     the file finishes downloading. Nothing loads until a click — the
-     tile is only a poster frame until then, which keeps the page fast
-     on mobile data.
-
-     To add another: copy a <figure class="vid"> block, set data-video
-     to the file path (data-video-type="file") or an 11-character
-     YouTube ID (data-video-type="youtube"), add a poster frame, and
-     write a caption naming the person and the city.
-     ─────────────────────────────────────────────────────────── -->
-<section class="sec" id="reviews">
-  <div class="wrap">
-    <div class="sec__head center">
-      <p class="sec__kicker">Reviews</p>
-      <h2>Pilgrims who travelled with us</h2>
-    </div>
-    <div class="vids">
-      <figure class="vid">
-        <button class="vid__btn" type="button"
-                data-video="assets/video/story-1.mp4"
-                data-video-type="file"
-                data-video-title="Customer story filmed in Madinah">
-          <img class="vid__poster" src="assets/img/social/story-1-poster.jpg" alt="Customer speaking outside the Prophet's Mosque in Madinah" loading="lazy" width="405" height="720">
-          <span class="vid__play" aria-hidden="true"></span>
-          <span class="sr">Play customer story, filmed in Madinah</span>
-        </button>
-        <figcaption>Filmed in Madinah &mdash; booked with Umrah Insights</figcaption>
-      </figure>
-
-      <figure class="vid">
-        <button class="vid__btn" type="button"
-                data-video="assets/video/story-2.mp4"
-                data-video-type="file"
-                data-video-title="Bushra's story, filmed in Makkah">
-          <img class="vid__poster" src="assets/img/social/story-2-poster.jpg" alt="Bushra speaking outside the Haram in Makkah" loading="lazy" width="405" height="720">
-          <span class="vid__play" aria-hidden="true"></span>
-          <span class="sr">Play Bushra's story, filmed in Makkah</span>
-        </button>
-        <figcaption>Bushra &mdash; Makkah, &ldquo;a splendid service&rdquo;</figcaption>
-      </figure>
-
-      <!-- Third cell turns the empty column into a capture point rather
-           than dead space. -->
-      <div class="vids__cta">
-        <p class="vids__lead">Filmed by real pilgrims, at the Haram &mdash; not actors, not stock footage.</p>
-        <p class="vids__sub">Every one of them started with the same two-minute enquiry. Send your dates and
-        we will come back with named hotels and one per-person price.</p>
-        <button class="btn btn--primary btn--block" type="button" data-open-quote data-pkg="after videos">Get my Umrah quote</button>
-        <a class="vids__ig" href="https://www.instagram.com/umrahinsights" target="_blank" rel="noopener" data-track="instagram-videos">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
-          More stories on Instagram
-        </a>
-      </div>
-    </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── Instagram wall ─────────────────────────────────────────
-     The four best-performing posts from @umrahinsights. This is the
-     strongest trust asset on the page: a 150k audience is proof no
-     testimonial can match, and it is the client's own photography
-     rather than stock. Files go in assets/img/social/ — see the
-     README there. A tile whose file is missing removes itself.
-     ─────────────────────────────────────────────────────────── -->
-<section class="sec sec--sand" id="instagram">
-  <div class="wrap">
-    <div class="ig__head">
-      <div>
-        <p class="sec__kicker">Instagram &middot; 150k+ followers</p>
-        <h2>The Umrah community already follows us</h2>
-        <p class="lede">Over 200,000 people across Instagram and Facebook follow Umrah Insights for
-        Makkah and Madinah content. The same team that posts it books your trip.</p>
-      </div>
-      <a class="btn btn--primary ig__follow" href="https://www.instagram.com/umrahinsights" target="_blank" rel="noopener" data-track="instagram-wall">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg>
-        Follow @umrahinsights
-      </a>
-    </div>
-
-    <div class="ig__grid">
-      <figure class="ig__tile">
-        <img src="assets/img/social/ig-post-planning.webp" alt="Umrah Insights post: planning Umrah in 2026-27, the best time to go" loading="lazy" onerror="this.closest('.ig__tile').remove()">
-      </figure>
-      <figure class="ig__tile">
-        <img src="assets/img/social/madinah-moon.webp" alt="The green dome of the Prophet's Mosque under a full moon" loading="lazy" onerror="this.closest('.ig__tile').remove()">
-      </figure>
-      <figure class="ig__tile">
-        <img src="assets/img/social/madinah-rays.webp" alt="Light rays over the green dome of the Prophet's Mosque" loading="lazy" onerror="this.closest('.ig__tile').remove()">
-      </figure>
-      <figure class="ig__tile">
-        <img src="assets/img/social/madinah-crescent.webp" alt="The green dome and minaret at night with a crescent moon" loading="lazy" onerror="this.closest('.ig__tile').remove()">
-      </figure>
     </div>
   </div>
 </section>
