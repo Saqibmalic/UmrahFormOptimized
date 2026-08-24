@@ -67,7 +67,7 @@ Nothing else hardcodes a colour.
 | 9 | Set the recipient email — `NOTIFY_EMAIL` (Sheets) or `$TO`/`$FROM` (PHP) | `google-apps-script.gs` / `submit-lead.php` |
 | 10 | Update `<link rel="canonical">` and the OG URLs to the real URL | `index.html` (head), and the `TravelAgency` block in the JSON-LD |
 | 11 | Date the two legal pages, add your ICO registration if you have one | `privacy-policy.html`, `terms.html` |
-| 12 | Add your four customer videos + poster frames (section 3 below) | `index.html` → `#reviews`, `assets/img/` |
+| 12 | ~~Add customer videos~~ — done: two are live in `assets/video/` | — |
 | 13 | Fill in the Ramadan dates and three `£REPLACE` prices, and check the year | `index.html` → `#ramadan` |
 
 **Do not skip #4.** Google Ads prohibits fabricated testimonials, and a disapproval on a lead-gen
@@ -109,36 +109,29 @@ page. Nothing is lost (this only works on PHP hosting — see below).
 
 ---
 
-## 2b. Customer video testimonials
+## 2b. Customer video testimonials — live
 
-Four vertical (9:16) slots, sized for phone-shot footage. **Nothing loads until someone clicks** —
-each tile is just a poster image, because a normal YouTube embed pulls roughly 700KB of scripts per
-video and would undo the load speed this page depends on.
+Two real customer videos are shipped in `assets/video/`, re-encoded from your
+19MB and 21MB originals to **3.2MB and 4.0MB** (720×1280, H.264/AAC, moov atom
+at the front so playback starts before the download finishes). The originals
+are still in git history at commit `50523d0`.
 
-For each of the four tiles in `index.html` → `#reviews`:
+Nothing downloads until a visitor taps play — each tile is a poster frame
+until then, so the videos cost nothing on page load. Poster frames were
+extracted from the videos themselves and live in `assets/img/social/`.
 
-1. Set `data-video`:
-   - **YouTube:** the 11-character video ID (`youtube.com/shorts/AbCdEfGhIjK` → `AbCdEfGhIjK`),
-     with `data-video-type="youtube"`. Plays via youtube-nocookie.
-   - **Self-hosted MP4:** a path such as `assets/video/story-1.mp4`, with `data-video-type="file"`.
-     Keep each file under ~15MB and encode H.264/AAC, 720×1280.
-2. Drop a poster frame at `assets/img/video-01.jpg` … `video-04.jpg`, **405 × 720**, under 150KB.
-   Pick a frame where the person's face is visible and they are mid-sentence — a frozen smile reads
-   as stock footage.
-3. Rewrite the `<figcaption>`: name, package, month. `Aisha, 5 star 10 nights, March` beats
-   "Happy customer".
+The third cell of that row is a copy-and-CTA panel rather than an empty
+column, which adds another capture point exactly where trust peaks.
 
-**Safe to publish before the videos are ready:** while all four are still `REPLACE_VIDEO_n` the
-whole section stays hidden, and any single tile whose poster image fails to load hides itself.
+To add a third video, follow the steps in `assets/img/social/README.md`.
 
-Two things worth knowing:
+Two things worth doing:
 
-- **Get permission in writing**, even informally over WhatsApp. A testimonial video of an identifiable
-  person is personal data under UK GDPR, and Google Ads will ask you to substantiate testimonials if
-  a reviewer flags the page.
-- **Subtitle them.** Most people watch these muted, in public, on mobile. Burned-in captions roughly
-  double completion on this kind of tile. YouTube's auto-captions are not enough if the speaker has
-  an accent — burn them in when you edit.
+- **Get permission in writing** from anyone identifiable in a testimonial
+  video. It is personal data under UK GDPR, and Google Ads can ask you to
+  substantiate testimonials.
+- **Keep the burned-in subtitles.** Both videos already have them, which is
+  why they work muted — most people watch these with sound off.
 
 ## 2c. Ramadan section
 
